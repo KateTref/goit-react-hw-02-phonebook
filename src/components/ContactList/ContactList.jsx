@@ -6,7 +6,7 @@ const ContactList = ({ items }) => {
     <ul>
       {items.map((item, idx) => (
         <li key={idx}>
-          <Contact contact={item.name} />
+          <Contact contact={item} />
         </li>
       ))}
     </ul>
