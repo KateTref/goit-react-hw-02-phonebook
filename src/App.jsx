@@ -11,7 +11,7 @@ class App extends Component {
 
   addContact = name => {
     this.setState(prevState => ({
-      contacts: [...prevState, { id: nanoid(), name }],
+      contacts: [...prevState.contacts, { id: nanoid(), name }],
     }));
   };
 
@@ -20,7 +20,12 @@ class App extends Component {
     return (
       <>
         <ContactForm onSubmit={this.addContact} />
-        {contacts.length > 0 && <ContactList items={contacts} />}
+        {contacts.length > 0 && (
+          <>
+            <h1>Contacts</h1>
+            <ContactList items={contacts} />
+          </>
+        )}
       </>
     );
   }

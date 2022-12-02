@@ -1,6 +1,6 @@
 import React from 'react';
-const Contact = ({ name }) => {
-  return <p>{name}</p>;
+const Contact = ({ contact }) => {
+  return <p>{contact}</p>;
 };
 
 export default Contact;

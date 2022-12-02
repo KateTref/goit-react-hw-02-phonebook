@@ -3,9 +3,7 @@ import React from 'react';
 const ContactForm = ({ onSubmit }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log(evt.target.elements);
     const { name } = evt.target.elements;
-    console.log(name.value);
     onSubmit(name.value);
   };
 
