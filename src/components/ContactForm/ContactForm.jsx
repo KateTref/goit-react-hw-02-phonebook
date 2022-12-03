@@ -1,11 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = ({ onSubmit, contacts }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
+
+    let namesArray = [];
+    contacts.map(contact => {
+      namesArray.push(contact.name);
+    });
+
     const { name, number } = evt.target.elements;
-    onSubmit(name.value, number.value);
+
+    if (namesArray.includes(name.value)) {
+      return alert(name.value + ' is already in contacts');
+    } else {
+      onSubmit(name.value, number.value);
+    }
   };
 
   return (
@@ -33,6 +44,7 @@ const ContactForm = ({ onSubmit }) => {
 
 ContactForm.propTypes = {
   onSubmit: PropTypes.func.isRequired,
+  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ContactForm;

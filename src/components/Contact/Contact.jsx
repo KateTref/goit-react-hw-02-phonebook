@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 const Contact = ({ contact }) => {
-  console.log(contact);
   return (
     <p>
       {contact.name}: {contact.number}
@@ -10,7 +9,7 @@ const Contact = ({ contact }) => {
 };
 
 Contact.propTypes = {
-  contact: PropTypes.objectOf({
+  contact: PropTypes.shape({
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
   }),
