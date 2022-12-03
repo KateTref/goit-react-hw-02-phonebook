@@ -6,13 +6,10 @@ import Filter from 'components/Filter/Filter';
 
 class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-    ],
+    contacts: [],
     filter: '',
-    name: '',
-    number: '',
+    // name: '',
+    // number: '',
   };
 
   addContact = (name, number) => {
@@ -39,10 +36,11 @@ class App extends Component {
 
     return (
       <>
+        <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         {contacts.length > 0 && (
           <>
-            <h1>Contacts</h1>
+            <h2>Contacts</h2>
             <Filter value={filter} onChange={this.changeFilter} />
             <ContactList items={visibleContacts} />
           </>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ContactForm = ({ onSubmit }) => {
   const handleSubmit = evt => {
@@ -28,6 +29,10 @@ const ContactForm = ({ onSubmit }) => {
       <button type="Submit">Add contact</button>
     </form>
   );
+};
+
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
