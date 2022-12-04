@@ -39,12 +39,12 @@ class App extends Component {
     const visibleContacts = this.getVisibleContacts();
 
     return (
-      <>
+      <div className="container">
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} contacts={contacts} />
         {contacts.length > 0 && (
           <>
-            <h2>Contacts</h2>
+            <h2 className="contactsTitle">Contacts</h2>
             <Filter value={filter} onChange={this.changeFilter} />
             <ContactList
               items={visibleContacts}
@@ -52,7 +52,7 @@ class App extends Component {
             />
           </>
         )}
-      </>
+      </div>
     );
   }
 }
