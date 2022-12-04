@@ -9,6 +9,7 @@ const ContactForm = ({ onSubmit, contacts }) => {
     let namesArray = [];
     contacts.map(contact => {
       namesArray.push(contact.name);
+      return namesArray;
     });
 
     const { name, number } = evt.target.elements;
