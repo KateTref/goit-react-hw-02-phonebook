@@ -33,7 +33,7 @@ class ContactForm extends Component {
   };
 
   reset = () => {
-    this.setState({ ...this.state });
+    this.setState({ name: '', number: '' });
   };
 
   render() {
